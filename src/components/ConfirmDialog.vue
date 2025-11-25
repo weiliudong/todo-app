@@ -37,8 +37,6 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits, watch} from 'vue'
-
 // 定义Props
 const props = defineProps({
   visible: {

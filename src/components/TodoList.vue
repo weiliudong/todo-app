@@ -31,7 +31,6 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from 'vue'
 import TodoItem from './TodoItem.vue'
 
 const props = defineProps({

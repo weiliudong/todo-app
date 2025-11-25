@@ -66,8 +66,6 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from 'vue'
-
 const props = defineProps({
   todo: Object,
   editTodoId: [Number, null],
