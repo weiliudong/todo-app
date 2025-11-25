@@ -1,16 +1,22 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ main ]  # 监听 main 分支的推送
+    branches: [ main ]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允许写入内容（关键权限）
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 拉取完整历史，避免 Git 操作失败
+          persist-credentials: false  # 禁用默认凭据，使用令牌
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # 自动获取的令牌，无需修改
-          publish_dir: ./dist  # 明确指定部署 dist 目录
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true  # 强制创建独立的 gh-pages 分支（首次部署推荐）
