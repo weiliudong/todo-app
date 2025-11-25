@@ -1,0 +1,76 @@
+/*全局样式 + 动画*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* 自定义工具类 */
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    .animate-fade-out {
+        animation: fadeOut 0.3s ease forwards;
+    }
+
+    .todo-item-hover {
+        @apply hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200;
+    }
+
+    .btn-primary {
+        @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 px-4 py-2 rounded-lg transition-colors;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors;
+    }
+}
+
+/* 全局基础样式 */
+body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300;
+}
+
+#app {
+    @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-200 dark:bg-gray-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500;
+}
