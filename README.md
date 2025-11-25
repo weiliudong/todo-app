@@ -91,6 +91,7 @@ todo-app/
 │ │ ├── TodoItem.vue # 待办项（查看/编辑模式切换）
 │ │ ├── TodoList.vue # 待办列表（空状态 + 滚动优化）
 │ │ ├── TodoStats.vue # 数据统计（基础指标 + 分类分布）
+│ │ ├── ConfirmDialog.vue # 页面弹框（批量删除 + 单个删除）
 │ │ └── ThemeToggle.vue # 暗黑模式切换（系统适配 + 本地存储）
 │ ├── composables/ # 组合式函数（核心逻辑复用）
 │ │ └── useTodo.js # 待办数据管理（CRUD + 筛选 + 持久化）
